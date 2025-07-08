@@ -233,7 +233,7 @@ The API supports Cross-Origin Resource Sharing (CORS) with permissive headers to
 ---
 
 
-# Fiber Backend - Ecommerce API
+# fiber-backend
 
 A simple ecommerce backend API built with [Fiber](https://gofiber.io/), [GORM](https://gorm.io/) ORM, and PostgreSQL.
 
