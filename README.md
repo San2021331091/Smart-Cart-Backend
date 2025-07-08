@@ -236,7 +236,7 @@ The API supports Cross-Origin Resource Sharing (CORS) with permissive headers to
 
 ---
 
-[Slim Backend Link](https://flaskcommerce-im42.onrender.com/)
+[Slim Backend Link](https://slimcommerce.onrender.com/)
 
 
 # fiber-backend
