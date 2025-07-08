@@ -425,13 +425,6 @@ Response: JSON array of orders for the specified user.
 
 ---
 
-
-
-
-Here's a **clean and informative `README.md` section** for your Flask-based SmartCart AI Assistant backend:
-
----
-
 # flask-backend
 
 This is an AI-powered product search and recommendation API built with **Flask**, **scikit-learn**, and **TF-IDF + KNN** models. It acts as an intelligent shopping assistant that can understand natural queries about products, prices, availability, and similar items.
