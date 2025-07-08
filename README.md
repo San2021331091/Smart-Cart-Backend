@@ -508,7 +508,7 @@ Smart Q\&A assistant for product-related questions.
 ```json
 {
   "answer": "Products in category 'womens-bags' below $50:",
-  "products": [ ... ],
+  "products": [  ],
   "yes": true
 }
 ```
@@ -532,8 +532,8 @@ Returns 5 similar products to the queried item using TF-IDF vectorization + KNN 
 ```json
 {
   "answer": "Products similar to 'iPhone 13' in category 'smartphones':",
-  "target_product": { ... },
-  "similar_products": [ ... ],
+  "target_product": {  },
+  "similar_products": [ ],
   "yes": true
 }
 ```
