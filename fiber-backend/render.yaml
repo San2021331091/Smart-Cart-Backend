@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: ecommerce
+    env: go
+    buildCommand: go build -o app .
+    startCommand: ./app
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        value: postgresql://ec:npg_1SjLJyOlru6p@ep-little-bird-a54kiydn-pooler.us-east-2.aws.neon.tech/ecommerce-db?sslmode=require
+      - key: PORT
+        value: 10000
