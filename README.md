@@ -124,6 +124,10 @@ Admin Panel URL: `http://localhost:8900/admin`
 
 ---
 
+
+
+[Fastify Backend LInk](https://fastify-commerce.onrender.com/)
+
 # slim-backend
 
 A PHP backend API built with Slim Framework 4, connecting to PostgreSQL, featuring product, category, review, cart, and sales endpoints with JSONB field parsing and CORS support.
@@ -232,6 +236,8 @@ The API supports Cross-Origin Resource Sharing (CORS) with permissive headers to
 
 ---
 
+[Slim Backend Link](https://flaskcommerce-im42.onrender.com/)
+
 
 # fiber-backend
 
@@ -331,6 +337,8 @@ Returns the 5 most recent product notifications with the following JSON structur
 
 ---
 
+[Fiber Backend Link](https://fiber-ecommerce.onrender.com/)
+
 # asp-backend
 
 A simple ASP.NET Core minimal API to fetch orders data from a PostgreSQL database.
@@ -424,6 +432,9 @@ GET /orders/123e4567-e89b-12d3-a456-426614174000
 Response: JSON array of orders for the specified user.
 
 ---
+
+[ASP.NET Core Backend Link](https://dotnetcommerce.onrender.com/)
+
 
 # flask-backend
 
@@ -565,4 +576,7 @@ Returns the top 10 most frequently searched queries.
 
 ---
 
-Frontend Link : (https://github.com/San2021331091/Smart-Cart.git)
+[Flask Backend Link](https://flaskcommerce-im42.onrender.com)
+
+
+Frontend Link : https://github.com/San2021331091/Smart-Cart.git
