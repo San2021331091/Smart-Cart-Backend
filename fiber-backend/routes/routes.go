@@ -17,5 +17,5 @@ func Setup(app *fiber.App) {
 	categoryController := &controllers.CategoryController{}
 
 	// Subcategories route
-	app.Get("/subcategories", categoryController.GetSubcategories)
+	app.Get("/maincategories", categoryController.GetSubcategories)
 }
