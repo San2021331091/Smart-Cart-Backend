@@ -1,0 +1,91 @@
+# ===============================
+# Node.js / Fastify
+# ===============================
+node_modules/
+npm-debug.log*
+yarn-error.log
+dist/
+build/
+.env
+.env.local
+.env.*.local
+
+# ===============================
+# PHP / SlimPHP
+# ===============================
+vendor/
+composer.lock
+.env
+.env.local
+.env.*.local
+/public/uploads/
+/public/tmp/
+cache/
+logs/
+
+# ===============================
+# Python / Flask
+# ===============================
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+*.pytest_cache/
+*.coverage
+htmlcov/
+instance/
+.env
+.env.local
+.env.*.local
+venv/
+.envrc
+
+# ===============================
+# Go / Fiber
+# ===============================
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+/vendor/
+bin/
+/build/
+
+# ===============================
+# .NET / ASP.NET Core
+# ===============================
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.dbmdl
+*.pdb
+*.pidb
+*.svclog
+*.ide
+*.vs/
+*.vscode/
+*.DotSettings.user
+.env
+.env.local
+.env.*.local
+
+# ===============================
+# OS generated
+# ===============================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===============================
+# IDE/editor
+# ===============================
+.idea/
+*.sublime-project
+*.sublime-workspace
+.vscode/
+*.code-workspace
