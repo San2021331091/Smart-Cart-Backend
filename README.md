@@ -238,18 +238,38 @@ The API supports Cross-Origin Resource Sharing (CORS) with permissive headers to
 
 [Slim Backend Link](https://slimcommerce.onrender.com/)
 
-
 # fiber-backend
 
-A simple ecommerce backend API built with [Fiber](https://gofiber.io/), [GORM](https://gorm.io/) ORM, and PostgreSQL.
+A simple e-commerce backend API built with [Fiber](https://gofiber.io/), [GORM](https://gorm.io/), and PostgreSQL.
 
-## Features
+This backend handles **products, categories, subcategories, and notifications**.
 
-* Product model with JSONB fields (`tags`, `dimensions`, `meta`, `images`)
-* REST endpoint for latest product notifications (latest 5 products)
+## Features      
+
+* **Category & Subcategory Models**
+  Supports `MainCategory` with multiple `Subcategories`:
+
+```go
+type Subcategory struct {
+    ID             int    `gorm:"column:id" json:"id"`
+    Slug           string `gorm:"column:slug" json:"slug"`
+    Name           string `gorm:"column:name" json:"name"`
+    MainCategoryID int    `gorm:"column:maincategory_id" json:"-"`
+}
+
+type MainCategory struct {
+    ID            int           `gorm:"column:maincategory_id" json:"maincategory_id"`
+    Name          string        `gorm:"column:name" json:"maincategory_name"`
+    ImgURL        string        `gorm:"column:imgurl" json:"imgURL"`
+    Subcategories []Subcategory `gorm:"-" json:"subcategories"`
+}
+```
+
+* REST endpoints for **latest product notifications** (latest 5 products)
 * CORS enabled for all origins
 * Environment variables support via `.env`
 * PostgreSQL database connection using GORM
+
 
 ## Requirements
 
@@ -257,31 +277,27 @@ A simple ecommerce backend API built with [Fiber](https://gofiber.io/), [GORM](h
 * PostgreSQL database
 * `.env` file with environment variables:
 
-  * `DATABASE_URL` — PostgreSQL DSN connection string
-  * `PORT` — server port (default: 3000)
+```env
+DATABASE_URL=postgres://user:password@localhost:5432/dbname?sslmode=disable
+PORT=3000
+```
 
 ## Installation
 
 1. Clone the repository:
 
-   ```bash
-   git clone <repo-url>
-   cd <repo-directory>
-   ```
+```bash
+git clone <repo-url>
+cd <repo-directory>
+```
 
-2. Create a `.env` file with your database connection details:
-
-   ```env
-   DATABASE_URL=postgres://user:password@localhost:5432/dbname?sslmode=disable
-   PORT=3000
-   ```
-
+2. Create a `.env` file with your database connection details.
 3. Build and run the server:
 
-   ```bash
-   go mod tidy
-   go run main.go
-   ```
+```bash
+go mod tidy
+go run main.go
+```
 
 4. The server will be running at: `http://localhost:3000`
 
@@ -299,7 +315,7 @@ Health check endpoint
 
 ### GET /notifications
 
-Returns the 5 most recent product notifications with the following JSON structure:
+Returns the 5 most recent product notifications with this JSON structure:
 
 ```json
 [
@@ -312,32 +328,30 @@ Returns the 5 most recent product notifications with the following JSON structur
 ]
 ```
 
-## Model Structure
+### GET /maincategories
 
-| Field                | Type    | Description                  |
-| -------------------- | ------- | ---------------------------- |
-| ID                   | uint    | Primary key                  |
-| Title                | string  | Product title                |
-| Description          | string  | Product description          |
-| Category             | string  | Product category             |
-| Price                | float64 | Price                        |
-| DiscountPercentage   | float64 | Discount percentage          |
-| Rating               | float64 | Product rating               |
-| Stock                | int     | Available stock              |
-| Tags                 | JSONB   | JSON array of tags           |
-| Brand                | string  | Brand name                   |
-| SKU                  | string  | Stock keeping unit           |
-| Weight               | float64 | Product weight               |
-| Dimensions           | JSONB   | JSON with product dimensions |
-| AvailabilityStatus   | string  | Availability info            |
-| MinimumOrderQuantity | int     | Minimum quantity to order    |
-| Meta                 | JSONB   | Additional metadata          |
-| Images               | JSONB   | Product images               |
-| Thumbnail            | string  | URL to product thumbnail     |
+Returns all main categories with their subcategories:
+
+```json
+[
+  {
+    "maincategory_id": 1,
+    "maincategory_name": "Electronics",
+    "imgURL": "https://example.com/image.png",
+    "subcategories": [
+      { "id": 1, "slug": "phones", "name": "Phones" },
+      { "id": 2, "slug": "laptops", "name": "Laptops" }
+    ]
+  }
+]
+```
 
 ---
 
 [Fiber Backend Link](https://fiber-ecommerce.onrender.com/)
+
+
+
 
 # asp-backend
 
