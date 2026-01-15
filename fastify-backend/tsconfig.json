@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES2020",                     // Modern target
+    "target": "ES2020",                   
     "module": "NodeNext",                   // More updated than Node16
     "moduleResolution": "node16",           // OK to keep
     "outDir": "dist",

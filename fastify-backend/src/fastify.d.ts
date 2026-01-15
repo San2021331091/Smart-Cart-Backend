@@ -1,14 +1,15 @@
 import 'fastify';
-import { UserPayload } from './types/UserpayloadTypes';
+import { FastifyRequest, FastifyReply } from 'fastify';
+import { UserPayload } from './UserpayloadTypes.js'; 
+
 declare module 'fastify' {
   interface FastifyInstance {
-    authenticate(
-      request: FastifyRequest,
-      reply: FastifyReply
-    ): Promise<void>;
+    // the authenticate decorator function
+    authenticate: (request: FastifyRequest, reply: FastifyReply) => Promise<void>;
   }
 
   interface FastifyRequest {
-    user: UserPayload;
+    // user exists after authentication
+    user?: UserPayload;
   }
 }
